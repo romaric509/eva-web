@@ -1,0 +1,10 @@
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const message = input.value;
+  const dialogue = document.getElementById("eva-dialogue");
+
+  if (message.trim() === "") return;
+
+  dialogue.textContent = "Tu m’as dit : " + message + " 😘";
+  input.value = "";
+}
