@@ -1,31 +1,22 @@
-body {
-  background: #111;
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const message = input.value;
+  const dialogue = document.getElementById("eva-dialogue");
 
-.eva-container {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
+  if (message.trim() === "") return;
 
-input {
-  padding: 10px;
-  width: 70%;
-  margin-top: 10px;
-}
+  const response = "Tu m'as dit : " + message + " 🤖";
 
-button {
-  padding: 10px;
-  margin-left: 5px;
-  background-color: #ff4081;
-  color: white;
-  border: none;
-  cursor: pointer;
+  const userMessage = document.createElement("div");
+  userMessage.textContent = "👤 " + message;
+  userMessage.style.fontWeight = "bold";
+
+  const evaResponse = document.createElement("div");
+  evaResponse.textContent = response;
+
+  dialogue.appendChild(userMessage);
+  dialogue.appendChild(evaResponse);
+  dialogue.scrollTop = dialogue.scrollHeight;
+
+  input.value = "";
 }
