@@ -1,10 +1,18 @@
-function sendMessage() {
-  const input = document.getElementById("user-input");
-  const message = input.value;
-  const dialogue = document.getElementById("eva-dialogue");
-
-  if (message.trim() === "") return;
-
-  dialogue.textContent = "Tu m’as dit : " + message + " 😘";
-  input.value = "";
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eva Web</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Eva</h1>
+    <div id="eva-dialogue" class="dialogue-box"></div>
+    <input type="text" id="user-input" placeholder="Pose-moi une question..." />
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+  <script src="eva.js"></script>
+</body>
+</html>
